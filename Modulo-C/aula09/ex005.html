@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros Passos com DOM - Document Object Model</title>
+    <style>
+        body {
+            background: rgb(68, 125, 199);
+            color: white;
+            font: normal 18pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="titulo">Iniciando estudos com DOM</h1>
+    <p class="paragrafo-um">Aqui vai o resultado</p>
+    <p id="paragrafo-dois">Aprendendo a usar o <strong>DOM</strong> em Javascript</p>
+    <div id="msg" name="msg" class="msg">Clique em mim</div>
+
+    <script>
+        // Selecionando Elementos
+        /*
+        por Marca
+        por ID
+        por Nome
+        por Classe
+        por Seletor
+        */
+
+       // por Marca
+       /*
+       var corpo = window.document.body
+       var p1 = window.document.getElementsByTagName('p')[0] // Pegando o conteúdo do primeiro paráfrafo
+       var p2 = window.document.getElementsByTagName('p')[1] // Pegando o conteúdo do segundo parágrafo
+       */
+
+       // por ID
+       /* var div = window.document.getElementById('msg')
+        div.style.background = 'green'
+        div.innerText = 'Estou aguardando...'
+        // window.document.getElementById('msg').innerText = 'Olá, Mundo!'
+        */
+
+        // por Nome
+        /* var div = window.document.getElementsByName('msg')[0]
+        div.innerText = 'Olá!'
+        */
+
+        // por Classe
+        /* var div = window.document.getElementsByClassName('msg')[0]
+        div.innerText = 'Bem-vindo!'
+        */
+
+        // por Seletor - Utilizando querySelector() e querySelectorAll()
+        // Para ID utiliza-se #
+        // Para Classe utiliza-se .
+        var div = window.document.querySelector('div.msg')
+        div.style.background = 'black'
+        
+        var titulo = window.document.querySelector('h1#titulo')
+        titulo.innerText = 'Manipulando o DOM'
+
+        var p1 = window.document.querySelector('p.paragrafo-um')
+        p1.style.color = 'yellow'
+
+        var p2 = window.document.querySelector('p#paragrafo-dois')
+        p2.style.background = 'orange'
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+</head>
+<body>
+    <h1>Qual a sua nacionalidade?</h1>
+    Digite o seu país: <input type="text" name="txtpais" id="txtpais">
+    <input type="button" value="Checar" id="btn-checar">
+    <div id="resultado"></div>
+
+    <script>
+        var button = window.document.querySelector('input#btn-checar')
+        button.addEventListener('click', verificar)
+
+        function verificar() {
+            var inputPais = window.document.querySelector('input#txtpais')
+            var pais = inputPais.value.toUpperCase()
+            var resultado = window.document.querySelector('div#resultado')
+            
+            resultado.innerHTML = `Seu país de origem é: <strong>${pais}.</strong></br>`
+            if(pais == 'BRASIL') {
+                resultado.innerHTML += `Você é <strong>brasileiro.</strong>`
+            } else {
+                resultado.innerHTML += `Você é <strong>estrangeiro.</strong>`
+            }
+        }
+    </script>
+</body>
+</html>
