@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nacionalidade</title>
+</head>
+<body>
+  <h1>Qual sua nacionalidade</h1>
+  País: <input type="text" name="txtnacionalidade" id="txtnacionalidade">
+  <input id="btn-nacionalidade" type="button" value="Nacionalidade">
+  <div id="res"></div>
+
+  <script>
+    var nacionalidade = document.getElementById('txtnacionalidade')
+    var res = document.querySelector('div#res')
+    var btn = document.getElementById('btn-nacionalidade')
+
+    btn.addEventListener('click', eusou)
+
+    function eusou() {
+      res.innerHTML += `<p>Vivendo em <strong>${nacionalidade.value.toUpperCase()}</strong></p>`
+
+      if (nacionalidade.value.toUpperCase() != 'BRASIL') {
+        res.innerHTML += `<p>Eu sou <strong>Estrangeiro</strong></p>`
+      } else {
+        res.innerHTML += `<p>Eu sou <strong>Brasileiro</strong></p>`
+      }
+    }
+
+  </script>
+</body>
+</html>
