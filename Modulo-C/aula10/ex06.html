@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eventos DOM</title>
+  <style>
+    div#area {
+      font: normal 20px Arial;
+      background-color: rgb(42, 139, 42);
+      color: white;
+      width: 200px;
+      height: 200px;
+
+      /* Deixando o texto alinhado ao centro */
+      line-height: 200px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <!--
+    Eventos dentro do próprio HTML
+    onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()"
+  -->
+  <div id="area">
+    Interaja...
+  </div>
+
+  <script>
+    /*
+      Eventos DOM
+      mouseenter, mouseout
+      mousemove
+      mousedown, mouseup
+      click
+
+      Funções: conjunto de linhas que vão ser executadas quando o evento ocorrer
+      function ação(parâmetros) {
+        bloco
+      }
+    */
+
+    var a = window.document.getElementById('area') // faz a ligação entre HTML e JavaScript
+    
+    // Ouvidores dentro do próprio JavaScript que vão tratar de ligar o HTML ao JavaScript
+    a.addEventListener('click', clicar)
+    a.addEventListener('mouseenter', entrar)
+    a.addEventListener('mouseout', sair)
+
+    function clicar() {
+      a.innerText = 'Clicou!' // muda apenas o texto, com innerHTML você consegue botar tags HTML
+      a.style.background = 'red'
+    }
+
+    function entrar() {
+      a.innerText = 'Entrou!'
+    }
+
+    function sair() {
+      a.innerText = 'Saiu!'
+      a.style.background = 'green'
+    }
+  </script>
+</body>
+</html>
