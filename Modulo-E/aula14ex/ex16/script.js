@@ -14,7 +14,7 @@ function contar() {
     res.innerHTML = `Impossível contar!`
     alert('[ERRO] Faltam dados a serem preenchidos!')
   } else {
-    res.innerHTML = `Contando... <br/>`
+    res.innerHTML = `<p>Contando...</p>`
 
     // Capturando os valores
     var inicio = Number(inicioInput.value)
@@ -33,7 +33,12 @@ function contar() {
         res.innerHTML += `${cont} `
       }
     }
-    
-  }
 
+    // Checando se o início é maior que o fim - Ordem decrescente
+    if (inicio > fim) {
+      for (var cont = inicio; cont >= fim; cont -= passo) {
+        res.innerHTML += `${cont} `
+      }
+    }
+  }
 }
